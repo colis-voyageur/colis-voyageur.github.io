@@ -164,17 +164,17 @@ export default function AuthPage() {
                 {isLogin ? "Pas encore membre ? " : "Déjà membre ? "}
               </span>
               <Button
-                type="button"
-                variant="ghost"
-                className="p-0 h-auto text-primary"
-                onClick={() => {
-                  if (isLogin) {
-                    window.location.href = '/register';
-                  } else {
-                    setIsLogin(true);
-                  }
-                }}
-                data-testid="button-toggle-auth"
+                  type="button"
+                  variant="ghost"
+                  className="p-0 h-auto text-primary"
+                  onClick={() => {
+                    if (isLogin) {
+                      setLocation('/register');
+                    } else {
+                      setIsLogin(true);
+                    }
+                  }}
+                  data-testid="button-toggle-auth"
               >
                 {isLogin ? "S'inscrire" : "Se connecter"}
               </Button>
