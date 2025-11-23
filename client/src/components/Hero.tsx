@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { CheckCircle } from 'lucide-react';
 import heroImage from '@assets/generated_images/Airport_traveler_hero_image_5d217a8a.png';
+import {Link} from "wouter";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -32,23 +33,27 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              size="lg"
-              className="text-base font-semibold bg-primary/90 backdrop-blur-sm hover:bg-primary"
-              data-testid="button-become-transporter"
-              onClick={() => console.log('Become transporter clicked')}
-            >
-              {t.hero.becomeTransporter}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-base font-semibold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
-              data-testid="button-send-package"
-              onClick={() => console.log('Send package clicked')}
-            >
-              {t.hero.sendPackage}
-            </Button>
+            <Link href="/create-trip">
+              <Button
+                size="lg"
+                className="text-base font-semibold bg-primary/90 backdrop-blur-sm hover:bg-primary"
+                data-testid="button-become-transporter"
+                onClick={() => console.log('Become transporter clicked')}
+              >
+                {t.hero.becomeTransporter}
+              </Button>
+            </Link>
+            <Link href="/search">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base font-semibold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+                data-testid="button-send-package"
+                onClick={() => console.log('Send package clicked')}
+              >
+                {t.hero.sendPackage}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
